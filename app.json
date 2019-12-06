@@ -347,6 +347,18 @@
                 "en": "Turn off if contact alarm"
               },
               "value": false
+            },
+            {
+              "id": "default_target_temperature",
+              "type": "number",
+              "decimals": 1,
+              "min": 1,
+              "max": 40,
+              "step": 0.5,
+              "label": {
+                "en": "Default target temperature if device is disabled"
+              },
+              "value": 16
             }
           ]
         }

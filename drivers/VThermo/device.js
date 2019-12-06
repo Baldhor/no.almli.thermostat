@@ -19,7 +19,11 @@ class VThermoDevice extends Homey.Device {
 
         new Homey.FlowCardCondition('vt_onoff_is_on')
             .register()
-            .registerRunListener((args, state) => args.device.getCapabilityValue('vt_onoff'));
+            .registerRunListener((args, state) => {
+                let vt_onoff = args.device.getCapabilityValue('vt_onoff');
+                this.log('vt_onoff = ' + vt_onoff);
+                return vt_onoff;
+            });
 
         if (this.hasCapability('onoff')) {
             this.registerCapabilityListener('onoff', async (value, opts) => {
